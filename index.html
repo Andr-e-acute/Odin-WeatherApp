@@ -9,7 +9,39 @@
   </head>
   <body>
     <form>
-      <input type="text" placeholder="location" />
+      <div class="now">
+        <input type="text" placeholder="location" />
+        <h2><span class="location"></span></h2>
+        <h2>now</h2>
+        <img src="" alt="todays weather" id="todaysIcon" />
+        <h2><span class="temp"></span> °C</h2>
+        <h2 class="condition"></h2>
+        <h2><span class="wind"></span> km/h</h2>
+        <h2><span class="humidity"></span>%</h2>
+      </div>
+      <div class="forecasts-container">
+        <div class="forecast today">
+          <h2 class="date"></h2>
+          <img src="" alt="" id="todaysIcon" />
+          <h2 class="condition"></h2>
+          <h2><span class="min-temp"></span> °C</h2>
+          <h2><span class="max-temp"></span> °C</h2>
+        </div>
+        <div class="forecast tomorrow">
+          <h2 class="date"></h2>
+          <img src="" alt="" id="todaysIcon" />
+          <h2 class="condition"></h2>
+          <h2><span class="min-temp"></span> °C</h2>
+          <h2><span class="max-temp"></span> °C</h2>
+        </div>
+        <div class="forecast twoDays">
+          <h2 class="date"></h2>
+          <img src="" alt="" id="todaysIcon" />
+          <h2 class="condition"></h2>
+          <h2><span class="min-temp"></span> °C</h2>
+          <h2><span class="max-temp"></span> °C</h2>
+        </div>
+      </div>
     </form>
   </body>
 </html>
