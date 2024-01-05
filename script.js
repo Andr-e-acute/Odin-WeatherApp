@@ -4,7 +4,7 @@ const userInputForm = document.querySelector("form");
 userInputForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const location = userInputForm.querySelector("input").value;
-  getWeatherData(location).then((data) => {});
+  getWeatherData(location);
 });
 
 // weather api
@@ -70,14 +70,20 @@ function displayWeather(data) {
     let forecastDay;
     if (forecast.classList.contains("today")) {
       forecastDay = 0;
+      forecast.querySelector(".date").textContent =
+        "Today " + formatDateShort(data[forecastDay].date);
     } else if (forecast.classList.contains("tomorrow")) {
       forecastDay = 1;
+      forecast.querySelector(".date").textContent = formatDateShort(
+        data[forecastDay].date
+      );
     } else if (forecast.classList.contains("twoDays")) {
       forecastDay = 2;
+      forecast.querySelector(".date").textContent = formatDateShort(
+        data[forecastDay].date
+      );
     }
-    forecast.querySelector(".date").textContent = formatDateShort(
-      data[forecastDay].date
-    );
+
     forecast.querySelector("img").src = data[forecastDay].conditionIcon;
     forecast.querySelector(".condition").textContent =
       data[forecastDay].condition;
@@ -96,6 +102,6 @@ function formatDateShort(inputDate) {
   const month = date.getMonth() + 1; //
   const formattedDay = day < 10 ? "0" + day : day;
   const formattedMonth = month < 10 ? "0" + month : month;
-  return formattedDay + "/" + formattedMonth;
+  return formattedDay + "." + formattedMonth;
 }
 // todo error handling
